@@ -22,6 +22,7 @@ public class SimpleHttpServer {
     }
 
     private static void handleRequest(Socket clientSocket) {
+
         try (
                 InputStream input = clientSocket.getInputStream();
                 OutputStream output = clientSocket.getOutputStream();
