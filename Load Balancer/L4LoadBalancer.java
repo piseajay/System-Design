@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class L4LoadBalancer {
 
     // List of backend servers
-    private static final List<InetSocketAddress> BACKENDS = Arrays.asList(
+    private static final List<InetSocßketAddress> BACKENDS = Arrays.asList(
             new InetSocketAddress("127.0.0.1", 8081),
             new InetSocketAddress("127.0.0.1", 8082),
             new InetSocketAddress("127.0.0.1", 8083)
