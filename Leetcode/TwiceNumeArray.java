@@ -2,9 +2,9 @@ public class TwiceNumeArray {
 
     public static void main(String[] args) {
 
-        System.out.println(dominantIndex(new int[] {1,2,3,6}));
-        System.out.println(dominantIndex(new int[] {0,0,0,1}));
-        System.out.println(dominantIndex(new int[] {15,44,34,10}));
+        System.out.println(dominantIndex(new int[]{1, 2, 3, 6}));
+        System.out.println(dominantIndex(new int[]{0, 0, 0, 1}));
+        System.out.println(dominantIndex(new int[]{15, 44, 34, 10}));
     }
 
     public static int dominantIndex(int[] nums) {
