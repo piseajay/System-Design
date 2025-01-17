@@ -2,7 +2,7 @@ public class UniqueCharsInString {
 
     public static void main(String[] args) {
 
-        System.out.println(allCharsUnique("abcdefghijklmnopa"));
+        System.out.println(allCharsUnique("abcdefghijjjjjjjjjjjjjjklmnopa"));
     }
 
     public static boolean allCharsUnique(String str) {
