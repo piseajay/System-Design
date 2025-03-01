@@ -16,32 +16,45 @@ public class BrowserHistory {
         System.out.println(browserHistory.back(7));
     }
 
-    private final String[] history;
-    private int currentIndex;
-    private int lastVisitedIndex;
+    private Node head;
+    private Node current;
 
     public BrowserHistory(String homepage) {
-        history = new String[100];
-        history[0] = homepage;
-        currentIndex = 0;
-        lastVisitedIndex = 0;
+        Node node = new Node(homepage);
+        this.head = node;
+        current = head;
     }
 
     public void visit(String url) {
-        currentIndex++;
-        history[currentIndex] = url;
-        lastVisitedIndex = currentIndex;
+        Node node = new Node(url);
+        current.next = node;
+        node.prev = current;
+        current = node;
     }
 
     public String back(int steps) {
-        int backIndex = Math.max(0, currentIndex - steps);
-        currentIndex = backIndex;
-        return history[backIndex];
+        while (steps > 0 && current.prev != null) {
+            current = current.prev;
+            steps--;
+        }
+        return current.url;
     }
 
     public String forward(int steps) {
-        int forwardIndex = Math.min(lastVisitedIndex, currentIndex + steps);
-        currentIndex = forwardIndex;
-        return history[forwardIndex];
+        while (steps > 0 && current.next != null) {
+            current = current.next;
+            steps--;
+        }
+        return current.url;
+    }
+
+    static class Node {
+        public String url;
+        public Node prev;
+        public Node next;
+
+        public Node(String val) {
+            this.url = val;
+        }
     }
 }
