@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class BestTimeToBuyAndSell {
 
     public static void main(String[] args) {
